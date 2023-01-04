@@ -73,7 +73,7 @@ app.get('/auth/github/callback',
     })
     
 
-    const vercel_port = 'my-space-backend-3m9uz9zfj-sysagar.vercel.app'
+    const vercel_port = 'my-space-backend-ten.vercel.app'
 app.listen(3000 || process.env.PORT || vercel_port, () => {
     console.log("listening at 3000");
 })
