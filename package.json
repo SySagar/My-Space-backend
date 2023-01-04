@@ -10,5 +10,24 @@
     "passport-github": "^1.1.0",
     "passport-github2": "^0.1.12",
     "passport-google-oauth2": "^0.2.0"
-  }
+  },
+  "name": "my-space-backend",
+  "version": "1.0.0",
+  "main": "BasicAuth.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node BasicAuth.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SySagar/My-Space-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SySagar/My-Space-backend/issues"
+  },
+  "homepage": "https://github.com/SySagar/My-Space-backend#readme",
+  "description": ""
 }
