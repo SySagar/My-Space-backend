@@ -8,7 +8,7 @@ const GitHubStrategy = require('passport-github').Strategy;
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "https://reckno-authentication.onrender.com/auth/github/callback"
+    callbackURL: "https://my-space-backend-ten.vercel.app/auth/github/callback"
 },
     async function (accessToken, refreshToken, profile, done) {
         
