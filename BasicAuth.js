@@ -34,7 +34,7 @@ function isLogged(req, res, next) {
 }
 
 app.get('/Login', async (req,res) => {
-
+    console.log(req.body.name)
     await User.findOne({username: req.body.name}).then((currentUser)=>{
         
         
