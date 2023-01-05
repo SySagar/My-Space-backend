@@ -107,7 +107,7 @@ app.get('/auth/github/callback',
     })
     
     app.get('/protected', isLogged, (req, res) => {
-        res.send("hello u have successfully logged in! "+req.user.username);
+        res.redirect('https://claymorphism-clock.web.app/Home');
         //res.send(`${req.user.displayname}`)
     })
     
