@@ -33,7 +33,7 @@ function isLogged(req, res, next) {
     req.user ? next() : res.sendStatus(401);
 }
 
-app.get('/', async (req,res) => {
+app.get('/Login', async (req,res) => {
 
     await User.findOne({username: req.body.name}).then((currentUser)=>{
         
