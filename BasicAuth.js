@@ -23,10 +23,52 @@ mongoose.connect(process.env.DB_URI,()=>{
     console.log("connected to mongodb");
 } , e=> console.error(e));
 
+const cors = require('cors');
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
+
 
 function isLogged(req, res, next) {
     req.user ? next() : res.sendStatus(401);
 }
+
+app.get('/', async (req,res) => {
+
+    await User.findOne({username: req.body.name}).then((currentUser)=>{
+        
+        
+        if(currentUser)
+        {
+        console.log('user exists');
+        res.send(200);
+        }
+        else
+        {
+
+            res.send('user does not exist');
+            
+        }
+    })
+    
+})
+
+app.post('/signup', (req,res) => {
+ 
+        console.log(req.body.name)
+           
+            User({
+                username: req.body.name,
+                email : req.body.email,
+                password: req.body.password
+              }).save().then((newUser)=>{
+                //console.log(profile)
+                console.log('new user created '+newUser);
+                res.send(200)
+              })
+
+    
+})
 
 app.get('/', (req, res) => {
     res.send('<a href="/auth/google">Authenticate with Google</a><br/> <a href="/auth/github">Authenticate with Github</a>');
